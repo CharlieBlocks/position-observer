@@ -1,5 +1,25 @@
-import { isElement, isFunction } from "@thednp/shorty";
 import { version } from "../package.json";
+
+/* @thednp/shorty replacements */
+type Fn = (...args: unknown[]) => unknown;
+const isFunction = (fn?: unknown): fn is Fn =>
+  typeof fn === "function" || false;
+
+const isObject = (obj?: unknown): obj is object =>
+  (obj !== null && obj !== undefined && typeof obj === "object") || false;
+
+type NodeObject = object & { nodeType: number };
+const isNode = (node?: unknown): node is Node =>
+  (isObject(node) &&
+    typeof (node as NodeObject).nodeType === "number" &&
+    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].some((x) =>
+      (node as NodeObject).nodeType === x
+    )) ||
+  false;
+
+const isElement = (element?: unknown): element is Element =>
+  (isNode(element) && element.nodeType === 1) || false;
+
 
 export type PositionObserverCallback = (
   entries: IntersectionObserverEntry[],
