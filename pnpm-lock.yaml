@@ -4,11 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-dependencies:
-  '@thednp/shorty':
-    specifier: ^2.0.11
-    version: 2.0.11
-
 devDependencies:
   '@types/node':
     specifier: ^24.0.0
@@ -817,11 +812,6 @@ packages:
     dependencies:
       '@testing-library/dom': 10.4.0
     dev: true
-
-  /@thednp/shorty@2.0.11:
-    resolution: {integrity: sha512-D+rLHt1l7c608yCuzXYJ75aDNWeMVbor+m1HO/XibhiWRbCpD8r6TUv3ayJI+feVfCnBNfrH+p6LSDn9l99uBA==}
-    engines: {node: '>=16', pnpm: '>=8.6.0'}
-    dev: false
 
   /@tybys/wasm-util@0.9.0:
     resolution: {integrity: sha512-6+7nlbMVX/PVDCwaIQ8nTOPveOcFLSt8GcXdx8hD0bt39uWxYT88uXzqTd4fTvqta7oeUJqudepapKNt2DYJFw==}
