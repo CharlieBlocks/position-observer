@@ -1,10 +1,24 @@
-import { isElement, isFunction } from "@thednp/shorty";
-
 //#region package.json
 var version = "1.1.0";
 
 //#endregion
 //#region src/index.ts
+const isFunction = (fn) => typeof fn === "function" || false;
+const isObject = (obj) => obj !== null && obj !== void 0 && typeof obj === "object" || false;
+const isNode = (node) => isObject(node) && typeof node.nodeType === "number" && [
+	1,
+	2,
+	3,
+	4,
+	5,
+	6,
+	7,
+	8,
+	9,
+	10,
+	11
+].some((x) => node.nodeType === x) || false;
+const isElement = (element) => isNode(element) && element.nodeType === 1 || false;
 const callbackModes = [
 	"all",
 	"intersecting",
